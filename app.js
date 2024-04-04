@@ -13,6 +13,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  session({
+    secret: "rafliganteng",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 

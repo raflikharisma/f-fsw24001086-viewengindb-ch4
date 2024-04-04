@@ -50,11 +50,6 @@
         <p>List Cars</p>
       </div>
     </div>
-    <% if (typeof message !== 'undefined' && message.length > 0) { %>
-    <div id="successMessage" class="alert alert-success" role="alert"><%= message %></div>
-    <% } %> <% if (typeof messageRemoved !== 'undefined' && messageRemoved.length > 0) { %>
-    <div id="successMessage" class="alert alert-dark" role="alert"><%= messageRemoved %></div>
-    <% } %>
 
     <!-- Konten utama -->
 
@@ -90,10 +85,10 @@
       </div>
       <div class="row">
         <div class="list-filter col">
-          <a href="/cars"><button>All</button></a>
-          <a href="/cars/small"><button>Small</button></a>
-          <a href="/cars/medium"><button>Medium</button></a>
-          <a href="/cars/large"><button>Large</button></a>
+            <a href="/cars"><button>All</button></a>
+            <a href="/cars/small"><button>Small</button></a>
+            <a href="/cars/medium"><button>Medium</button></a>
+            <a href="/cars/large"><button>Large</button></a>
         </div>
       </div>
       <div class="row row-cols-4">
@@ -104,20 +99,7 @@
             <div class="card-body">
               <p class="card-title"><%= car.name %> / <%= car.size %></p>
               <p class="card-text">Rp.<%= car.price %> / Hari</p>
-              <p class="card-updated">
-                <span
-                  ><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.99996 18.3333C14.6023 18.3333 18.3333 14.6024 18.3333 10C18.3333 5.39762 14.6023 1.66666 9.99996 1.66666C5.39759 1.66666 1.66663 5.39762 1.66663 10C1.66663 14.6024 5.39759 18.3333 9.99996 18.3333Z"
-                      stroke="#8A8A8A"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path d="M10 5V10L13.3333 11.6667" stroke="#8A8A8A" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-                Update at <%= new Date(car.updatedAt).toLocaleString('en-US', { weekday: 'short', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', }) %>
-              </p>
+              <p class="card-updated"><%= new Date(car.updatedAt).toLocaleString('en-US', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }) %></p>
               <div class="card-button d-inline-flex g-3">
                 <button class="btn btn-primary delete" data-toggle="modal" data-target="#deleteModal<%= car.id %>">Delete</button>
                 <a href="/cars/edit/<%= car.id %>" class="btn btn-primary">Edit</a>
@@ -146,23 +128,13 @@
             </div>
           </div>
         </div>
-
         <% }); %>
       </div>
     </div>
 
-    <!-- Bootstrap JS (opsional) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const successMessage = document.getElementById("successMessage");
+    <!-- Modal -->
 
-        if (successMessage) {
-          setTimeout(function () {
-            successMessage.style.display = "none";
-          }, 3000);
-        }
-      });
-    </script>
+    <!-- Bootstrap JS (opsional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

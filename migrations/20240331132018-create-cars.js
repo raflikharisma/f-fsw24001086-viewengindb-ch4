@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       photo: {
-        type: Sequelize.TEXT
+        type: Sequelize.ARRAY(Sequelize.TEXT)
       },
       price: {
         type: Sequelize.INTEGER

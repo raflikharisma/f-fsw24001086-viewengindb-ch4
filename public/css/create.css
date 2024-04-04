@@ -3,6 +3,10 @@ body {
   background-color: #f4f5f7 !important;
 }
 
+::file-selector-button {
+  display: none;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -78,55 +82,26 @@ body {
   padding-left: 25px;
 }
 
-.card {
+.form-group {
+  width: 900px;
+}
+.form-div {
   margin-left: 130px;
-  width: 351px;
-  height: 420px;
-}
-.card-img-top {
-  padding: 24px 24px 0 24px;
-}
-
-.card-title {
-  font-size: 14px;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 100%;
+  background-color: white !important;
 }
 
-.card-text {
-  font-size: 16px;
-  font-weight: 500;
+.form-div select {
+  width: 339px;
 }
 
-.row {
-  background-color: #f4f5f7;
+.form-div input {
+  width: 339px;
 }
 
-.card-button a {
-  width: 143.5px;
-  border-radius: 2px;
-  border: 1px;
-  padding: 8px, 12px, 8px, 12px;
-  font-size: 14px;
-}
-
-.delete {
-  margin-right: 16px;
-  width: 143.5px;
-  border-radius: 2px;
-  border: 1px;
-  padding: 8px, 12px, 8px, 12px;
-  font-size: 14px;
-}
-
-.alert {
-  position: absolute;
-  top: 150px;
-  z-index: 100;
-  width: 500px;
-  left: 40%;
-}
-
-.alert-success.removed {
-  background-color: black; /* Change background color to black when removed */
-  color: white; /* Change text color to white when removed */
-  
+.form-div label {
+  padding-right: 90px;
 }
