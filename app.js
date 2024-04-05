@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
-    secret: "rafliganteng",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
